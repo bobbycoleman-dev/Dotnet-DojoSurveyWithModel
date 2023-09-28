@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Survey
+
+<div class="mx-auto w-50">
+    <h1 class="display-4 text-center">Dojo Survey</h1>
+    <div class="card shadow">
+        <div class="card-body">
+            <form asp-action="Process" asp-controller="Home" method="post">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="DojoLocation" class="form-label"></label>
+                    <select asp-for="DojoLocation" class="form-select">
+                        <option disabled selected>---Select Location---</option>
+                        <option value="Online">Online</option>
+                        <option value="Bellevue">Bellevue</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Chicago">Chicago</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FavoriteLanguage" class="form-label"></label>
+                    <select asp-for="FavoriteLanguage" class="form-select">
+                        <option disabled selected>---Select Language---</option>
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="C#">C#</option>
+                        <option value="Java">Java</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Comment" class="form-label"></label>
+                    <textarea asp-for="Comment" cols="30" rows="5" class="form-control"></textarea>
+                </div>
+                <div class="text-end"><button class="btn btn-success">Submit</button></div>
+            </form>
+        </div>
+    </div>
+</div>
